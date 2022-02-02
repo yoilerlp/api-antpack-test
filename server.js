@@ -1,8 +1,12 @@
 const express = require("express");
 const cors = require("cors");
+
 const sequelize = require("./config/db");
 const User = require("./models/User");
 const userRouter = require("./routes/userRoute");
+const adminRouter = require("./routes/adminRoute");
+
+
 const app = express();
 
 sequelize.sync().then(() => {
@@ -26,6 +30,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // api/user
 app.use('/api/user', userRouter)
+
+// api/admin
+
+app.use('/api/admin', adminRouter)
 
 app.get("/", async (req, res) => {
   res.json({

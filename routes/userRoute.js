@@ -1,7 +1,10 @@
-const  userController = require('../controllers/UserController')
-
 const userRouter = require('express').Router()
 
+const  userController = require('../controllers/UserController');
+const { authenticateToken } = require('../middlewares/auth');
+
+
+userRouter.use(authenticateToken);
 userRouter.post("/create", userController.createUser);
 
 userRouter.get("/getAll", userController.getAllUsers);
