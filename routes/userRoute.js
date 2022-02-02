@@ -5,6 +5,7 @@ const { authenticateToken } = require('../middlewares/auth');
 
 
 userRouter.use(authenticateToken);
+
 userRouter.post("/create", userController.createUser);
 
 userRouter.get("/getAll", userController.getAllUsers);

@@ -55,10 +55,12 @@ const login = async (req, res) => {
       console.log({ token })
 
       res.status(200).json({
-        login: true,
+        error: false,
+        msg: 'Logueado correctamente',
         data: {
           user: userFound,
           token,
+          login: true,
         },
       });
     } else {

@@ -13,7 +13,7 @@ Admin.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    last_name: {
+    lastname: {
       type: DataTypes.STRING,
       allowNull: false,
     },

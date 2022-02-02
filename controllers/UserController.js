@@ -31,13 +31,13 @@ const getUserById = async (req, res) => {
   const userFound = await User.findOne({ where: { id } });
 
   if (!userFound) {
-    res.status(404).json({
+   return res.status(404).json({
       error: true,
       msg: "usuario no encontrado",
     });
   }
 
-  res.status(200).json({
+  return res.status(200).json({
     error: false,
     msg: "Usuario encontrado",
     data: userFound,
@@ -49,7 +49,7 @@ const updateUser = async (req, res) => {
 
   try {
     let userFound = await User.update(req.body, { where: { id } });
-    res.status(200).json({
+    return res.status(200).json({
       msg: "Usuario actualizado",
       data: userFound,
       error: false,

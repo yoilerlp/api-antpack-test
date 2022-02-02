@@ -2,7 +2,7 @@ const AdminController = require("../controllers/AdminController");
 
 const adminRouter = require("express").Router();
 
-adminRouter.get("/", AdminController.getAll);
+//adminRouter.get("/", AdminController.getAll);
 
 adminRouter.post("/create", AdminController.createAdmin);
 
